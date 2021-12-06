@@ -8,6 +8,6 @@ void main () {
   
   frag_colour.r = (normal.x+1)*0.5;
   frag_colour.g = (normal.y+1)*0.5;
-  frag_colour.g = (normal.z+1)*0.5;
+  frag_colour.b = (normal.z+1)*0.5;
   
 };

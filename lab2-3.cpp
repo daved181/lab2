@@ -246,7 +246,7 @@ int main( int argc, char** argv )
   const float f = 100.0f;
 
   glm::vec3 light_position[3] = {
-		{0.0f, -0.5f, -1.0f},
+		{0.0f, 0.0f, -1.0f},
 		{0.0f, 1.0f, 0.0f},
 		{0.0f, -1.0f, 0.0f}
   };
@@ -278,6 +278,9 @@ int main( int argc, char** argv )
 
 	  glm::mat4 mvp = projection * view * model;
 	  glUniformMatrix4fv(glGetUniformLocation(shader_program, "mvp"), 1, GL_FALSE, glm::value_ptr(mvp));
+
+	  glm::mat4 viewModel = view * model;
+	  glUniformMatrix4fv(glGetUniformLocation(shader_program, "viewModel"), 1, GL_FALSE, glm::value_ptr(viewModel));
 
 	  // update other events like input handling 
 	  glfwPollEvents();

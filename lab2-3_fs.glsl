@@ -30,7 +30,7 @@ void main () {
     // Implement Equation 1 from the lab instructions: (incoming light colour) * (brdf) * (cosine)
     //float cosine = max(0.0, dot(normalize(light_position[l] - position), normal));
 
-    frag_colour +=  normalize(light_colour[l]) * blinn_phong_brdf(light_position[l], position, normal) 
-        *max(0.0, dot(normalize(light_position[l] - position), normal));
+    frag_colour +=  light_colour[l] * 3 * blinn_phong_brdf(light_position[l], position, normalize(normal)) 
+        *max(0.0, dot(normalize(light_position[l] - position), normalize(normal)));
   }
 }
